@@ -1,12 +1,9 @@
-//
-//  AppDelegate.h
-//  Template_ObjC
-//
-//  Created by Kwok Ho FUNG on 7/10/2015.
-//  Copyright © 2015 ULIP. All rights reserved.
-//
+//  Created by Dave Fung.
+//  Copyright (c) 2015 Hong Kong Baptist University. All rights reserved.
 
 #import <UIKit/UIKit.h>
+#import "GlobalValues.h"
+#import "BookmarksHelper.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -14,4 +11,3 @@
 
 
 @end
-

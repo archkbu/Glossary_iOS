@@ -1,10 +1,5 @@
-//
-//  AppDelegate.m
-//  Template_ObjC
-//
-//  Created by Kwok Ho FUNG on 7/10/2015.
-//  Copyright © 2015 ULIP. All rights reserved.
-//
+//  Created by Dave Fung.
+//  Copyright (c) 2015 Hong Kong Baptist University. All rights reserved.
 
 #import "AppDelegate.h"
 
@@ -14,9 +9,22 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //[GlobalValues setShowPasswordPageForFirstTimeUsing:YES];
+    //[GlobalValues setAppPassword:@"root"];
+    [BookmarksHelper useBookmarks:nil byUsingTypes:YES];
+    //NSLog(@"%@",[BookmarksHelper getBookmarksJSONString:nil]);
+    
+    UIStoryboard *storyBoard;
+    NSString *rootViewName=@"SnapScreenVC";
+    storyBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *initViewController=[storyBoard instantiateViewControllerWithIdentifier:rootViewName];
+    UINavigationController *navController=[[UINavigationController alloc] initWithRootViewController:initViewController];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [self.window setRootViewController:navController];
     return YES;
 }
 

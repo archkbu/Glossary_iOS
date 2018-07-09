@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="minimum-scale=1, initial-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script src="../jquery/jquery-2.1.4.min.js"></script>
+<title>ULIP</title>
+<style>
+
+body{
+overflow: hidden;
+}
+
+#ulip_chi_name_vertical{
+position: absolute;
+top: 28%;
+right: 8.5%;
+height: 55%;
+}
+
+#ulip_eng_name{
+position: absolute;
+top: 29%;
+left: 5%;
+width:55%;
+}
+
+#logo_holder{
+position: absolute;
+top: 1%;
+left: 5%;
+-webkit-transition: top 1s ease 0s, left 1s ease 0s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation: top 1s ease 0s, left 1s ease 0s; /* Firefox < 16 */
+-ms-animation: top 1s ease 0s, left 1s ease 0s; /* Internet Explorer */
+-o-animation: top 1s ease 0s, left 1s ease 0s; /* Opera < 12.1 */
+transition: top 1s ease 0s, left 1s ease 0s;
+}
+
+#university_logo{
+position: absolute;
+left:10%;
+bottom: 5%;
+}
+
+#ulip_eng_name, #ulip_chi_name_vertical, #university_logo{
+-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation: fadein 1s; /* Firefox < 16 */
+-ms-animation: fadein 1s; /* Internet Explorer */
+-o-animation: fadein 1s; /* Opera < 12.1 */
+animation: fadein 1s;
+-webkit-animation-delay: 3s; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation-delay: 3s; /* Firefox < 16 */
+-ms-animation-delay: 3s; /* Internet Explorer */
+-o-animation-delay: 3s; /* Opera < 12.1 */
+animation-delay: 3s;
+-webkit-animation-fill-mode: forwards; /* Safari, Chrome and Opera > 12.1 */
+-moz-animation-fill-mode: forwards; /* Firefox < 16 */
+-ms-animation-fill-mode: forwards; /* Internet Explorer */
+-o-animation-fill-mode: forwards; /* Opera < 12.1 */
+animation-fill-mode: forwards;	
+}
+@keyframes fadein {
+from {opacity:0;}
+to {opacity:1;}
+}
+@-moz-keyframes fadein { /* Firefox */
+from {opacity:0;}
+to {opacity:1;}
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+from {opacity:0;}
+to {opacity:1;}
+}
+@-o-keyframes fadein { /* Opera */
+from {opacity:0;}
+to {opacity:1;}
+}
+</style>
+</head>
+
+<body>
+<table id="logo_holder" style="position:absolute;top:0%;left:0%;width:100%;height:100%;">
+<tr><td style="width:100%;height:100%;text-align:center;vertical-align:middle;">
+<img id="uliplogo_org" src="logo.gif" style="height: 30%;">
+</td></tr>
+</table>
+
+<img id="uliplogo_dest" src="logo.gif" style="position:absolute;height:30%;left:3.8%;top:1.5%;opacity:0">
+<img id="ulip_chi_name_vertical"  style="opacity:0" src="ulip_chi_name.png">
+<img id="ulip_eng_name"   style="opacity:0" src="ulip_eng_name.png">
+
+<div id="university_logo" style="opacity:0">
+	<img src="logo_hkbu.png" style="width:44%">&nbsp;&nbsp;<img src="logo_hkpolyu.png" style="width:44%">
+</div>
+
+
+<script type="text/javascript">
+document.body.onload=function(){
+document.body.style.webkitOverflowScrolling='touch';
+document.body.setAttribute('onselectstart','return false');
+document.body.style.webkitTouchCallout='none';
+document.body.style.webkitUserSelect='none';
+
+var pos_dest = $("#uliplogo_dest").position();
+var pos_org  = $("#uliplogo_org").position();
+setTimeout(function(){
+document.getElementById('logo_holder').style.top  = (Math.round( pos_dest.top) - Math.round( pos_org.top) )+'px';
+document.getElementById('logo_holder').style.left = (Math.round( pos_dest.left)- Math.round( pos_org.left))+'px';
+},2500);
+};
+</script>
+
+</body>
+</html>
