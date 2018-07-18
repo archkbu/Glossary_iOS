@@ -428,7 +428,6 @@ while(checkindex()){
 inIndex=getRandomIntInclusive(0,preprocessedArr.length-1);
 }
 drawnPool.push(inIndex);
-
 inKey=preprocessedArr[inIndex].key;
 inIndex2=preprocessedArr[inIndex].id;
 var rans='';
@@ -443,10 +442,12 @@ var anotherIndex=0;
 
 var checkFun2=function(){
 for(var z=0; z<incorrans.length; z++){
-if(incorrans[z]==tmp_rans)return true;
+if(incorrans[z]==tmp_rans){return true;}
 }
 return false;
 }
+
+
 
 do{
 anotherIndex=getRandomIntInclusive(0,preprocessedArr.length-1);
@@ -454,6 +455,7 @@ anotherIndex=getRandomIntInclusive(0,preprocessedArr.length-1);
 var con=getContentById(preprocessedArr[anotherIndex].refers[drawInRefers(preprocessedArr[anotherIndex].refers)]);
 if(lang=='eng')tmp_rans=con.Chinese;
 else if(lang=='chi')tmp_rans=con.English;
+
 while(checkFun2()){
 do{
 anotherIndex=getRandomIntInclusive(0,preprocessedArr.length-1);
@@ -462,6 +464,7 @@ var con=getContentById(preprocessedArr[anotherIndex].refers[drawInRefers(preproc
 if(lang=='eng')tmp_rans=con.Chinese;
 else if(lang=='chi')tmp_rans=con.English;
 }
+
 incorrans.push(tmp_rans);
 }
 theAns=[];
@@ -477,8 +480,8 @@ document.getElementById('obj_btn_'+(i+1)).innerHTML=theAns[i];
 }
 obj_span_ansTableTerms.innerHTML=preprocessedArr[inIndex].name;
 if(needDAF)dafter2();
-}
 
+}
 
 
 function timerFun(){
@@ -642,7 +645,7 @@ pab_obj_btn_4.doMouseEvent('mouseup',function(){obj_btn_4.style.backgroundImage=
 pab_obj_btn_4.doMouseEvent('mousedown',function(){obj_btn_4.style.backgroundImage='url(\'media/nd/optiontab_b.png\')';});
 
 
-//javascript:initGame('eng','bookmarked',{"eng":["0,14","17,40","22,28","19,106","18,252","22,24","20,27","0,57","21,1","21,7","24,0","22,34"],"chi":[]},0);
+//initGame('eng','syn',{"eng":[],"chi":[]},0);
 </script>
 
 
